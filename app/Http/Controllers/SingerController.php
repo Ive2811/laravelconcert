@@ -15,7 +15,7 @@ class SingerController extends Controller
     public function index()
     {
         //
-        $data['singers']=Singer::paginate(5);
+        $data['singers']=Singer::paginate(12);
         return view('singers.index', $data);
     }
 
@@ -41,7 +41,7 @@ class SingerController extends Controller
         //
         $singerData= request()->except('_token');
         Singer::insert($singerData);
-        //return response()->json($petData);
+   
         return redirect('singer');
     }
 
